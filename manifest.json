@@ -1,0 +1,27 @@
+{
+	"name": "Chrome tab jump list",
+	"description": "Record history of active chrome tabs, and allow navigating through",
+	"version": "1.0",
+	"manifest_version": 3,
+	"permissions": ["tabs"],
+	"background": {
+	  "service_worker": "background.js"
+	},
+	"commands": {
+		"jump-tab-list-forward": {
+			"suggested_key": {
+				"default": "Alt+I"
+			},
+			"description": "Move to next tab in jump list"
+		},
+		"jump-tab-list-backward": {
+			"suggested_key": {
+				"default": "Alt+O"
+			},
+			"description": "Move to previously active tab in jump list"
+		}
+	},
+	"action": {
+	  "default_title": "TabJumpList"
+	}
+}
