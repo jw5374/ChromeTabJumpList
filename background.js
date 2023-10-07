@@ -27,11 +27,13 @@ const tabActivationHandler = (activeInfo) => {
 async function switchToTab(currentTab) {
 	let retrievedTab
 	try {
+		retrievedWindow = await chrome.windows.get(currentTab.windowId)
 		retrievedTab = await chrome.tabs.get(currentTab.tabId)
 	} catch {
 		return false
 	}
 	console.log(retrievedTab)
+	await chrome.windows.update(retrievedWindow.id, { focused: true })
 	await chrome.tabs.update(retrievedTab.id, { active: true })
 	chrome.tabs.onActivated.addListener(tabActivationHandler)
 	return true

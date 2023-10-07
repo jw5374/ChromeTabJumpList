@@ -23,6 +23,6 @@ Unfortunately, any exceptions that occur is probably due to my own incompetence,
 Alternatively, anyone is welcome to open an issue (I think that's possible?)
 
 ## TODO
-- [ ] Support recording history of tabs between windows (currently does not support multiple chrome windows, and will not function if a tab is moved or opened on separate windows)  
+- [x] Support recording history of tabs between windows (currently does not support multiple chrome windows, and will not function if a tab is moved or opened on separate windows)
 - [ ] Add keyboard shortcuts for other OS's
 - [ ] Add an extension popup to configure desired length of history (currently 50 of most recent tabs)
