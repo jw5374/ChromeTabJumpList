@@ -100,6 +100,11 @@ chrome.tabs.onRemoved.addListener(async (tabId, removeInfo) => {
 	if (removeInfo.isWindowClosing) {
 		return
 	}
+	if (currentJumpPosition >= tabJumpList.length || currentJumpPosition < 0) {
+		currentJumpPosition = tabJumpList.length - 1
+	}
+	console.log(tabJumpList)
+	console.log(currentJumpPosition)
 	if (tabId === (tabJumpList[currentJumpPosition]).tabId) {
 		chrome.tabs.onActivated.removeListener(tabActivationHandler)
 		tabJumpList.splice(currentJumpPosition, 1)
